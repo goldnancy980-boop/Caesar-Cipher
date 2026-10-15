@@ -18,7 +18,7 @@
 * C
 * ASCII character encoding
 * Command-line arguments
-
+* CS50 library 
 ## Concepts Learned
 
 * String manipulation
