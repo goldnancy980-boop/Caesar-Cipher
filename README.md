@@ -1,50 +1,88 @@
-# CS50 Caesar
+# Caesar Cipher
 
-## Description
+## Project Overview
 
-**Caesar** is a C programming project from Harvard University's **CS50x** course. The program encrypts messages using the Caesar cipher, a classical encryption technique that shifts each letter by a specified numerical key.
+Caesar is a C program I implemented as part of the Week 2 Caesar problem set. It encrypts messages by shifting alphabetical characters by a specified number of positions using the Caesar cipher.
+
+The program accepts an encryption key through the command line, prompts the user to enter plaintext and prints the resulting ciphertext.
 
 ## How It Works
 
-1. Accepts a numerical key from the command line.
-2. Validates the key to ensure it is a non-negative integer.
-3. Prompts the user to enter a plaintext message.
-4. Shifts each alphabetical character by the specified key.
-5. Preserves uppercase and lowercase letters while leaving non-alphabetical characters unchanged.
-6. Displays the resulting ciphertext.
+1. Checks that exactly one command-line argument is provided.
+2. Checks that the key is not empty and contains only digits.
+3. Converts the key from a string to an integer.
+4. Prompts the user to enter plaintext.
+5. Encrypts alphabetical characters using the Caesar cipher formula.
+6. Preserves uppercase and lowercase letters while leaving non-alphabetical characters unchanged.
+7. Prints the encrypted message.
+
+## Requirements
+
+* A C compiler
+* The CS50 C Library
+
+## How to Get the CS50 Library
+
+This program uses `get_string()` from the CS50 C Library.
+
+**Option 1: CS50 Codespace**
+
+Visit [CS50 Codespace](https://cs50.dev/). The library is available in this environment.
+
+**Option 2: Ubuntu or Debian**
+
+Run these commands in your terminal:
+
+```bash
+curl -s https://packagecloud.io/install/repositories/cs50/repo/script.deb.sh | sudo bash
+sudo apt install libcs50
+```
+
+## How to Compile and Run
+
+Save the program as `caesar.c`.
+
+In CS50 Codespace, compile the program:
+
+```bash
+make caesar
+```
+
+Run it with an encryption key, such as `3`:
+
+```bash
+./caesar 3
+```
+
+## Example
+
+**Input:**
+
+```text
+./caesar 3
+Plaintext: Hello, World!
+```
+
+**Output:**
+
+```text
+Ciphertext: Khoor, Zruog!
+```
 
 ## Technologies Used
 
 * C
-* ASCII character encoding
-* Command-line arguments
-* CS50 library 
-## Concepts Learned
-
-* String manipulation
-* Loops and conditional statements
-* Character arithmetic
-* Command-line arguments
-* Input validation
-* Modular arithmetic
-
-## How to Run
-
-Compile the program:
-
-`make caesar`
-
-Run the program with a numerical key:
-
-`./caesar 13`
-
-The program will prompt you to enter the message to encrypt.
+* CS50 C Library
+* `ctype.h`
+* `stdio.h`
+* `stdlib.h`
+* `string.h`
 
 ## What I Learned
 
-This project strengthened my understanding of C programming, string manipulation, command-line arguments and modular arithmetic. It also introduced me to the principles of classical encryption and how a numerical key can transform plaintext into ciphertext.
-
-## Course
-
-Harvard University's CS50x: Introduction to Computer Science.
-
+* Working with command-line arguments.
+* Validating user input.
+* Converting strings to integers.
+* Using character functions to identify alphabetical characters and letter cases.
+* Applying the Caesar cipher encryption formula.
+* Manipulating strings in C.
